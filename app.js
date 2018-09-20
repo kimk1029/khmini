@@ -20,3 +20,13 @@ app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경�
         }
     });
 });
+app.get('/css', function (req, res) { // 웹서버 기본주소로 접속 할 경우 실행 . ( 현재 설정은 localhost 에 3303 port 사용 : 127.0.0.1:3303 )
+    fs.readFile('main.css', function (error, data) { // index.html 파일 로드 .
+        if (error) {
+            console.log(error);
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' }); // Head Type 설정 .
+            res.end(data); // 로드 html response .
+        }
+    });
+});
