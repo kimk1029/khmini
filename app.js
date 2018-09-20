@@ -3,6 +3,7 @@ var express = require('express'); // 웹서버 사용 .
 var app = express();
 var fs = require('fs'); // 파일 로드 사용.
 
+app.use(express.static('public'));
 // 포트 설정
 app.listen(3000, function () {
     console.log('Server Start .');
@@ -19,4 +20,3 @@ app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경�
         }
     });
 });
-app.use(express.static('public'));
