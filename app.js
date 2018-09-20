@@ -19,16 +19,4 @@ app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경�
         }
     });
 });
-app.get('/images', function (req, res) { 
-    console.log(req);
-    console.log("***************");
-    console.log(res);
-    // fs.readFile('index.html', function (error, data) { // index.html 파일 로드 .
-    //     if (error) {
-    //         console.log(error);
-    //     } else {
-    //         res.writeHead(200, { 'Content-Type': 'text/html' }); // Head Type 설정 .
-    //         res.end(data); // 로드 html response .
-    //     }
-    // });
-});
+app.use(express.static('public'));
