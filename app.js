@@ -25,6 +25,7 @@ app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경�
 });
 
 app.get('/board', function (req, res) { // 웹서버 기본주소로 접속 할 경우 실행 . ( 현재 설정은 localhost 에 3303 port 사용 : 127.0.0.1:3303 )
+    console.log("board in ************");
     fs.readFile('test_board.html', function (error, data) { // index.html 파일 로드 .
         if (error) {
             console.log(error);
