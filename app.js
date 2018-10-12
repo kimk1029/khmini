@@ -9,9 +9,10 @@ app.listen(3000, function () {
     console.log('Server Start .');
 });
 app.use(express.static(__dirname + '/public' ));
-console.log(__dirname);
-console.log(__dirname);
-app.use('/js', express.static(__dirname + '/../node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/js', function(){
+    console.log("2222");
+    express.static(__dirname + '/../node_modules/jquery/dist');
+}); // redirect JS jQuery
 // 라우팅 설정
 app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경우 실행 . ( 현재 설정은 localhost 에 3303 port 사용 : 127.0.0.1:3303 )
     fs.readFile('index.html', function (error, data) { // index.html 파일 로드 .
