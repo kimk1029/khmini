@@ -11,7 +11,7 @@ app.listen(3000, function () {
 app.use(express.static(__dirname + '/public' ));
 app.use('/js', function(){
     console.log("2222");
-    express.static(__dirname + '/../node_modules/jquery/dist');
+    return express.static(__dirname + '/../node_modules/jquery/dist');
 }); // redirect JS jQuery
 // 라우팅 설정
 app.get('/', function (req, res) { // 웹서버 기본주소로 접속 할 경우 실행 . ( 현재 설정은 localhost 에 3303 port 사용 : 127.0.0.1:3303 )
