@@ -24,6 +24,10 @@
         $(document).ready(function () {
             $('.modal').modal();
         });
+      function modalClose(){
+        var instance = M.Modal.getInstance(elem);
+        instance.close();
+      }
     </script>
 
 <body>
@@ -89,16 +93,15 @@
                     <div class="form-group">
                             <label>Title</label>
                             <input type="title" class="form-control" id="addBaord_title" placeholder="Enter title">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
+                            <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
                         <hr>
-                            <label for="addBoard_label">내용</label>
+                            <label for="addBoard_label">Contents</label>
                             <textarea class="form-control" id="addBoard_contents" rows="3" style="height: 60%"></textarea>
                           </div>
                   </div>
                   <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+                    <a href="#!" class="modal-close waves-effect waves-red btn-flat">Agree</a>
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="modalClose()">close</a>
                   </div>
                 </div>
                         
